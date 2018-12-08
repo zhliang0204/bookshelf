@@ -1,0 +1,239 @@
+// --------------------
+// Definition of variables
+$primary: #32c3ff;
+
+
+// ----------------------------------------
+// To install Boostrap:
+// 1) Run in the client folder: $ npm i bootstrap
+// 2) Import bootstrap with the following line
+// @import 'bootstrap/scss/bootstrap';
+// ----------------------------------------
+@import 'bootstrap/scss/bootstrap';
+
+// --------------------
+// Style reusable for all components
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Comic Sans MS', Cursive, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+  
+    background-image: url("https://external-preview.redd.it/z4nvL6lG4SGrhXR7yEQ-k-66tv4XMqSU-uHWBTjIiCs.jpg?auto=webp&s=deaf2a9b189c8ef24f94aa00d83865e23840d235");
+     background-image: url("https://lh3.googleusercontent.com/-cpwi0SOfNdo/XAguXg9pTHI/AAAAAAAADJM/fKXthv_slpYuWM1w2hx4ZTdPF_VEAnTWQCL0BGAYYCw/h1365/sharon-mccutcheon-532782-unsplash.jpg");
+    // background-image:url("https://lh3.googleusercontent.com/-UwI6aY0APxo/XAgxeD1rHRI/AAAAAAAADKY/Tf1onAjJuxE_bfUVoIH_YcTFfqIesWnwgCL0BGAYYCw/h1365/eli-francis-100644-unsplash.jpg");
+   
+  background-image: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  margin: 0%;
+  font-family: 'Comic Sans MS', Cursive, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.info {
+  margin: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: inline-block;
+  background-color: #5776e9;
+  color: white;
+}
+
+.info.info-danger {
+  background-color: #e73f3f;
+}
+
+
+  li, .nav-item{
+    margin-right:20px
+  }
+  
+  // div, .jumbotron{
+  //    margin: 20px;
+  // }
+
+// --------------------
+Style for App component
+.App {
+  text-align: center;
+
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+  }
+
+  .App-header {
+    background-color: #8896AB;
+    padding: 20px;
+    color: white;
+
+    a {
+      color: white;
+      padding: 0 5px;
+      text-decoration: unset;
+    }
+
+    a.active {
+      font-weight: bold;
+    }
+  }
+
+  .App-title {
+    font-size: 1.5em;
+  }
+
+  .App-intro {
+    font-size: large;
+  }
+
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+// --------------------
+// Style for Home component
+.Home {
+  p {
+    font-size: 1.2em;
+  }
+}
+
+// --------------------
+// Style for Secret component
+// .Secret {
+//   .result {
+//     font-size: 1.2em;
+//     color: $primary;
+//   }
+// }
+
+//button on image
+.img-wrapper {
+  position: relative;
+ }
+
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+
+.img-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.img-overlay:before {
+  content: ' ';
+  display: block;
+  /* adjust 'height' to position overlay content vertically */
+  height: 50%;
+}
+
+.btn-success{
+  color:grey;
+}
+
+
+.card {
+  min-height: 200px;
+
+  .card-img-top.img-fluid {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.link{
+   display: flex;
+   justify-content: space-around;
+   color: white; 
+   text-decoration: none
+}
+
+.padding{
+  padding: 20px;
+}
+
+.padding input {
+  border-radius: 10px; 
+}
+.padding button {
+  border-radius: 10px; 
+}
+
+
+// bookCard
+.card-body{
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: stretch;
+}
+
+.checkbox{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+  align-content: space-around;
+  width: 60%;
+  margin: 30px auto;
+  
+}
+
+// isFirstime login
+  input[type=checkbox]{
+    -webkit-appearance: none;
+    vertical-align:middle;
+    margin-top:0;
+    background:#fff;
+    border:#596e79 solid 1px;
+    border-radius: 3px;
+    min-height: 12px;
+    min-width: 12px;
+  }
+
+
+
+input[type="checkbox"]:checked {
+  background: #596e79;
+}
+
+.div jumbotron{
+   margin: 20px;
+}
+
+.favoriatePage{
+  text-align: center;
+}
+
+div .input-group-append{
+  border-radius: 40px;
+}
+
+.label{
+  font-family: 'Comic Sans MS', Cursive, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.1em;
+}
+.character {
+  font-family: 'Comic Sans MS', Cursive, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
