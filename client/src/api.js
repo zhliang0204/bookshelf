@@ -67,9 +67,9 @@ export default {
   },
 
   // get personal book shelf
-  getBooks(id) {
+  getBooks() {
     return service
-      .get('/bookshelf/'+id)
+      .get('/bookshelf/')
       .then(res => res.data)
       .catch(errHandler)
   },
@@ -91,16 +91,16 @@ export default {
 
   addBookToShelf(book){
     return service
-            .post('/bookshelf/add', book)
+            .post('/bookshelf/', book)
             .then(res => res.data)
             .catch(errHandler)
   },
 
 
   // refresh history
-  updateHistory(book, id){
+  updateHistory(book){
     return service
-            .post('/bookshelf/history/'+id, book)
+            .post('/bookshelf/history/', book)
             .then(res => res.data)
             .catch(errHandler)
   },
@@ -108,15 +108,15 @@ export default {
   //remove from bookshelf
   removeBook(bookId){
     return service
-            .get("/bookshelf/delete/" + bookId)
+            .delete("/bookshelf/" + bookId)
             .then(res => res.data)
             .catch(errHandler)
   },
 
   // get history information of user
-  getHistory(userId){
+  getHistory(){
     return service
-            .get("/bookshelf/history/" + userId)
+            .get("/bookshelf/history/")
             .then(res => res.data)
             .catch(errHandler)
   },

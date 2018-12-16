@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import categories from '.././category.json';
 import api from '../../api';
-import {Button, Container,InputGroupText,InputGroup,InputGroupAddon, Input,Jumbotron,Row,Col,ListGroup,ListGroupItem} from "reactstrap";
+import {Button, Container,ListGroup,ListGroupItem} from "reactstrap";
 
 class FirstTimeLogin extends Component {
   constructor(props) {

@@ -27,8 +27,8 @@ class BookShelf extends Component {
     console.log(book._id);
     let bookId = book._id;
     api.removeBook(bookId).then(res => {
-      let userId = api.getUserId();
-      api.getBooks(userId).then(res => {
+      // let userId = api.getUserId();
+      api.getBooks().then(res => {
         this.setState({
           books: res
         })
@@ -36,8 +36,8 @@ class BookShelf extends Component {
     })
   }
   updateBooks(){
-    let userId = api.getUserId();
-    api.getBooks(userId).then(res => {
+    // let userId = api.getUserId();
+    api.getBooks().then(res => {
       this.setState({
         books: res
       })

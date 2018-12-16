@@ -49,17 +49,18 @@ router.use((req, res, next) => {
 })
 
 // Route to personal bookshelf
-router.get('/:id', isLoggedIn, (req, res, next) => {
+// change by yourself
+router.get('/', isLoggedIn, (req, res, next) => {
   
-  let id = req.params.id;
+  let id = req.user._id;
   User.findById(id).populate('_booklist')
   .then(user=> res.json(user._booklist))
 });
 
 // it could return null for user without history
-router.get('/history/:id', isLoggedIn, (req, res, next) => {
+router.get('/history/', isLoggedIn, (req, res, next) => {
   
-  let id = req.params.id;
+  let id =  req.user._id;
   History.findOne({_user:id})
   .then(history=> {
     res.json(history)
@@ -68,10 +69,10 @@ router.get('/history/:id', isLoggedIn, (req, res, next) => {
 });
 
 
-router.post('/history/:id', isLoggedIn, (req, res,next)=>{
-  let id = req.params.id;
+router.post('/history/', isLoggedIn, (req, res,next)=>{
+  let uid = req.user._id;
   let {author, category} = req.body;
-  History.findOne({_user:id}).then(history => {
+  History.findOne({_user:uid}).then(history => {
     if(history !== null){
     let newAuthorL =  updateValue(history.author, author)
     let newCategoryL = updateValue(history.category, category)
@@ -84,7 +85,7 @@ router.post('/history/:id', isLoggedIn, (req, res,next)=>{
 
     } else {
       const newHistory = new History({
-        _user:req.params.id,
+        _user:req.user._id,
         category: [category],
         author: [author]
       })
@@ -100,7 +101,7 @@ router.post('/history/:id', isLoggedIn, (req, res,next)=>{
 })
 
 
-router.post('/add', isLoggedIn, (req, res, next) => {
+router.post('/', isLoggedIn, (req, res, next) => {
   let { onlineId, imageUrl, title, author, description, category, buyLink, price } = req.body
   BookShelf.findOne({onlineId:onlineId})
   .then(book => {
@@ -143,18 +144,12 @@ router.post('/add', isLoggedIn, (req, res, next) => {
 });
 
 
-router.get('/delete/:id', isLoggedIn,  (req, res, next) => {
+router.delete('/:id', isLoggedIn,  (req, res, next) => {
   let bookid = req.params.id;
   let id = req.user.id
-  User.findById(id)
-  .then(user => {
-    orgList = user._booklist;
-    const newList = deleteBook(orgList, bookid);
-    User.findByIdAndUpdate(id, {
-      _booklist: newList
-    }).then(user => {res.json({success: true})
-    })
-  })
+  User.findByIdAndUpdate(id, {$pull: {_booklist: bookid}})
+  .then(user => {res.json({success: true})})
+  
  
 })
 

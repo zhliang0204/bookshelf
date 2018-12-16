@@ -1,22 +1,15 @@
 import React, { Component } from 'react';
-import { Route, Link, NavLink, Switch } from 'react-router-dom';
+import { Route, NavLink, Switch } from 'react-router-dom';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, } from 'reactstrap';
 
 import Home from './pages/Home';
 
-
-
-// import Secret from './pages/Secret';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import api from '../api';
-import googleapi from '../googleapi';
 import FirstTimeLogin from './pages/FirstTimeLogin';
 import BookShelf from './pages/BookShelf';
 import BookCard from './pages/BookCard';
-// import ProfileEdit from './pages/ProfileEdit';
-// import ProfileModal from './pages/ProfileModal';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 
 
@@ -44,7 +37,6 @@ class App extends Component {
     return (
       <div>
       <div className="Nav">
-        {/* <Navbar color="dark" dark expand="md" inverse collapseOnSelect> */}
         <Navbar style={{backgroundColor: "#596e79"}} expand="md" inverse collapseOnSelect>
 
         <NavbarBrand href="/" className = 'character'>BookStore</NavbarBrand>
@@ -52,25 +44,24 @@ class App extends Component {
         <Collapse isOpen={this.state.isOpen} navbar>
         <Nav className="ml-auto" navbar>
 
-        {/* <header className="App-header"> */}
-        <NavItem style={{marginRight:'8px'}} className = 'character'>
+        <NavItem style={{marginRight:8}} className = 'character'>
           <NavLink to="/" exact style={{color: 'white', textDecoration: 'none',flexDirection:'row'}}>Home</NavLink>
         </NavItem>
 
-          <NavItem style={{marginRight:'8px'}} className = 'character'>
+          <NavItem style={{marginRight:8}} className = 'character'>
           {!api.isLoggedIn() && <NavLink  to="/signup" style={{color: 'white', textDecoration: 'none'}} >Signup</NavLink>}
           </NavItem>
 
-          <NavItem style={{marginRight:'8px'}} className = 'character'>
+          <NavItem style={{marginRight:8}} className = 'character'>
           {!api.isLoggedIn() && <NavLink to="/login" style={{color: 'white', textDecoration: 'none'}}>Login</NavLink>}
           </NavItem>
 
 
-          <NavItem style={{marginRight:'8px'}} className = 'character'>
+          <NavItem style={{marginRight:8}} className = 'character'>
           {api.isLoggedIn() && <NavLink to="/personalbookshelf" style={{color: 'white', textDecoration: 'none'}}>Bookshelf</NavLink>}   
           </NavItem>
 
-           <NavItem style={{marginRight:'8px'}} className = 'character'>
+           <NavItem style={{marginRight:8}} className = 'character'>
            {api.isLoggedIn() && <NavLink to="/" className = 'character' style={{color: 'white', textDecoration: 'none'}} onClick={(e) => this.handleLogoutClick(e)}>Logout</NavLink>}
            </NavItem>
 

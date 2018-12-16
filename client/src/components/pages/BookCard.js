@@ -27,7 +27,7 @@ class BookCard extends Component {
       category: this.props.book.category
     }
 
-    api.updateHistory(historyInfor, userId)
+    api.updateHistory(historyInfor)
     .then(res => console.log("success"))
     this.toggle()
   }
@@ -40,8 +40,9 @@ class BookCard extends Component {
   }
 
   deleteBook(){
-    api.removeBook(this.props.book._id).then(res => console.log(res))
-    this.props.onUpdateBooks();
+    api.removeBook(this.props.book._id).then(res => {
+      this.props.onUpdateBooks()
+    })
   }
 
   render() {

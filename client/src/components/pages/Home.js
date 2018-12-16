@@ -142,7 +142,7 @@ class Home extends Component {
 
   newRecommendBooks(){
     let userId = api.getUserId();
-    api.getHistory(userId)
+    api.getHistory()
     .then(res => {
       console.log("recommend")
       if(!res){
