@@ -10,6 +10,7 @@ import api from '../api';
 import FirstTimeLogin from './pages/FirstTimeLogin';
 import BookShelf from './pages/BookShelf';
 import BookCard from './pages/BookCard';
+import LogginWithGoogle from './pages/LogginWithGoogle'
 
 
 
@@ -75,7 +76,7 @@ class App extends Component {
           <Route path="/" exact component={Home} />
           <Route path="/signup" component={Signup} />
           <Route path="/login" component={Login} />
-          {/* <Route path="/secret" component={Secret} /> */}
+          <Route path="/test" component={LogginWithGoogle} />
           <Route path="/bookshelf/:id" component={BookCard} />
           <Route path="/firstlogin" component={FirstTimeLogin}/>
           {/* <Route path="/profile" component={ProfileEdit} /> */}
@@ -84,6 +85,7 @@ class App extends Component {
           
 
           <Route path="/personalbookshelf" component={BookShelf}/>
+          {/* <Route path="/auth/google" render={()=><h2>test</h2>}/> */}
           <Route render={() => <h2>404</h2>} />
         </Switch>
         

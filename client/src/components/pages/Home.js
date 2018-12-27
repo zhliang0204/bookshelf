@@ -36,7 +36,7 @@ class Home extends Component {
     } else {
       if(!api.isLoggedIn()){
         console.log("random-genenrate-books-more")
-        this. randomGenBooks()
+        this.randomGenBooks()
       } else {
         console.log("recommendated-books-more")
         this.newRecommendBooks()
@@ -106,7 +106,7 @@ class Home extends Component {
         <Input className='character' placeholder="search content" value = {this.state.searchContent} onChange={(e) => this.changeContent(e)}/>
         <InputGroupAddon className='character' addonType="append" onClick ={() => this.searchResult()} style={{cursor: "pointer", borderRadius: "10px" }}>Search</InputGroupAddon>
       </InputGroup>
-        {this.state.books.length == 0 && <Progress bar animated color="info" value="102">Loading</Progress> }
+        {this.state.books.length === 0 && <Progress bar animated color="info" value="102">Loading</Progress> }
         <div className="row">
           {this.state.books &&
             this.state.books.map((book, i) => (
@@ -141,7 +141,6 @@ class Home extends Component {
 
 
   newRecommendBooks(){
-    let userId = api.getUserId();
     api.getHistory()
     .then(res => {
       console.log("recommend")

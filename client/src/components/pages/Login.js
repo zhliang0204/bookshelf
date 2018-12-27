@@ -54,20 +54,19 @@ class Login extends Component {
         </FormGroup>
 
         </Form>
-      
+            <Button
+              color="primary"
+              tag="a"
+              href={api.service.defaults.baseURL + "/auth/google"}
+            >
+              log with google
+            </Button>
         </Jumbotron>
         </Container>
         {this.state.message && <div className="info info-danger">
           {this.state.message}
         </div>}
-        {/* <form>
-          Username: <input type="text" value={this.state.username} onChange={(e) => this.handleInputChange("username", e)} /> <br />
-          Password: <input type="password" value={this.state.password} onChange={(e) => this.handleInputChange("password", e)} /> <br />
-          <button onClick={(e) => this.handleClick(e)}>Login</button>
-        </form> */}
-        {/* {this.state.message && <div className="info info-danger">
-          {this.state.message}
-        </div>} */}
+        
       </div>
     );
   }

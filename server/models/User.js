@@ -5,6 +5,8 @@ const userSchema = new Schema({
   username: String,
   password: String,
   email: String,
+  googleID: String,
+  slackID: String,
   pictureUrl: String,
   isFirstTime: {type: Boolean,default: true},
   likes:[{type: String}],

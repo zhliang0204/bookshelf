@@ -24,7 +24,9 @@
     "multer-storage-cloudinary": "^2.2.1",
     "nocache": "^2.0.0",
     "passport": "^0.4.0",
+    "passport-google-oauth": "^1.0.0",
     "passport-local": "^1.0.0",
+    "passport-slack": "0.0.7",
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {

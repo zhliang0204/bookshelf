@@ -21,6 +21,8 @@ export default {
     return localStorage.getItem('user') != null
   },
 
+
+
   // test user Id
   getUserId(){
     if(localStorage.getItem('user') != null){
@@ -59,6 +61,8 @@ export default {
       })
       .catch(errHandler)
   },
+
+ 
 
   logout() {
     localStorage.removeItem('user')
@@ -139,6 +143,17 @@ export default {
       .put('/user/profile', body)
       .then(res => res.data)
       .catch(errHandler)
+  },
+
+  getProfile1() {
+    return service
+      .get("/profile1")
+      .then(res => {
+        // If we have localStorage.getItem('user') saved, the application will consider we are loggedin
+        localStorage.setItem("user", JSON.stringify(res.data));
+        res.data;
+      })
+      .catch(errHandler);
   },
 
   // addPicture(file) {
