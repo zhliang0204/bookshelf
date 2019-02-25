@@ -32,7 +32,7 @@ class Signup extends Component {
       .then(result => {
         console.log('SUCCESS!')
         // this.props.history.push("/") // Redirect to the home page
-        this.props.history.push("/firstlogin") // Redirect to the home page
+        this.props.history.push("/firstlogin") // Redirect to the firstlogin page
         this.setState({
           isShowImage: true,
         })

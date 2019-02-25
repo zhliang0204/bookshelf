@@ -37,11 +37,6 @@ function updateValue(orgList, cur){
   return orgList;
 }
 
-function deleteBook(orgList, book){
-  let idx = orgList.indexOf(book);
-  orgList.splice(idx, 1);
-  return orgList;
-}
 
 router.use((req, res, next) => {
   console.log('DEBUG routes/bookShelf');
